@@ -81,6 +81,7 @@
         {
           "type": "path",
           "style": "powerline",
+          "powerline_symbol": "\uE0CD",
           "foreground": "p:folder.fg",
           "background": "p:folder.bg",
           "display_root": true,
@@ -269,10 +270,10 @@
         {
           "type": "os",
           "style": "powerline",
-          "powerline_symbol": "",
+          "powerline_symbol": "\uE0B1",
           "foreground": "p:os.fg",
           "background": "p:os.bg",
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
           "properties": {
             "macos": "mac"
           }
