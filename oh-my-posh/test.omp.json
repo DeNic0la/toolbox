@@ -54,28 +54,30 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "p:first.bg",
-          "foreground": "p:first.fg",
-          "leading_diamond": "\ue0c5",
-          "style": "diamond",
-          "template": "{{if .Root }}\ueb46{{ end }}{{ if .SSHSession }}\uEBA9 {{ end }}{{ .UserName }}{{ if .SSHSession }}@{{.HostName}} {{ end }}",
-          "type": "session"
-        },
-        {
           "type": "shell",
-          "style": "powerline",
-          "powerline_symbol": "",
-          "foreground": "p:shell.fg",
-          "background": "p:shell.bg",
+          "style": "diamond",
+          "leading_diamond": "\ue0c5",
+          "trailing_diamond": " ",
+          "foreground": "p:first.fg",
+          "background": "p:first.bg",
           "properties": {
             "mapped_shell_names": {
-              "pwsh": "PS",
+              "pwsh": "\ue86c",
+              "powershell": "\ue86c",
+              "ps": "\ue86c",
               "bash": "\ue760",
               "zsh": "\ue761",
               "_zsh": "\ue691",
               "fish": "\uee41"
             }
           }
+        },
+        {
+          "background": "p:first.bg",
+          "foreground": "p:first.fg",
+          "style": "diamond",
+          "template": " {{if .Root }}\ueb46{{ end }}{{ if .SSHSession }}\uEBA9 {{ end }}{{ .UserName }}{{ if .SSHSession }}@{{.HostName}} {{ end }}",
+          "type": "session"
         },
         {
           "type": "path",
@@ -229,8 +231,9 @@
         },
         {
           "type": "git",
-          "style": "powerline",
-          "powerline_symbol": "\ue0a0",
+          "style": "diamond",
+          "leading_diamond": "\ue0a0",
+          "trailing_diamond": "\ue0d1",
           "foreground": "p:git.fg",
           "background": "p:git.bg",
           "background_templates": [
