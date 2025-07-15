@@ -33,11 +33,11 @@
     "spotify.fg": "#FFFFFF",
     "ytm.bg": "#FF0000",
     "ytm.fg": "#FFFFFF",
-    "git.bg": "#242424",
+    "git.bg": "#5e4800",
     "git.fg": "#ffffff",
     "git-changes.bg": "#f0ad4e",
     "git-ahead-and-behind.bg": "#5bc0de",
-    "git-ahead.bg": "#5cb85c",
+    "git-ahead.bg": "#000361",
     "git-behind.bg": "#d9534f",
     "execution-time.bg": "#8800dd",
     "execution-time.fg": "#ffffff",
@@ -75,7 +75,7 @@
           "foreground": "p:first.fg",
           "style": "powerline",
           "powerline_symbol": "\uE0CD",
-          "template": "{{if .Root }}\ueb46{{ end }}{{ if .SSHSession }}\uEBA9 {{ end }}{{ .UserName }}{{ if .SSHSession }}@{{.HostName}} {{ end }}",
+          "template": "{{if .Root }}\ueb46{{ end }}{{ if .SSHSession }}\uEBA9 {{ end }}{{ .UserName }}{{ if .SSHSession }}@{{.HostName}}{{ end }} ",
           "type": "session"
         },
         {
