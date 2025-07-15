@@ -81,7 +81,7 @@
         {
           "type": "path",
           "style": "powerline",
-          "powerline_symbol": "\uE0CC",
+          "leading_powerline_symbol": "\uE0CC",
           "foreground": "p:folder.fg",
           "background": "p:folder.bg",
           "display_root": true,
