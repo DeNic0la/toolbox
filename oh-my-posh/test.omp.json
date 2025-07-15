@@ -270,7 +270,6 @@
         {
           "type": "os",
           "style": "powerline",
-          "powerline_symbol": "",
           "foreground": "p:os.fg",
           "background": "p:os.bg",
           "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
