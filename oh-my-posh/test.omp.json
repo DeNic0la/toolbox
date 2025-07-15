@@ -3,7 +3,7 @@
   "final_space": true,
   "version": 3,
   "palette": {
-    "first.bg": "#26002b",
+    "first.bg": "#5b0269",
     "first.fg": "#FFFFFF",
     "ng.bg": "#1976d2",
     "ng.fg": "#FFFFFF",
@@ -43,9 +43,9 @@
     "execution-time.fg": "#ffffff",
     "os.bg": "#242424",
     "os.fg": "#ffffff",
-    "folder.bg": "#5b0269",
+    "folder.bg": "#26002b",
     "folder.fg": "#ffffff",
-    "shell.bg": "#0077c2",
+    "shell.bg": "#26002b",
     "shell.fg": "#ffffff"
   },
   "blocks": [
