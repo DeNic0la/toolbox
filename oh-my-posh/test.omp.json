@@ -3,7 +3,7 @@
   "final_space": true,
   "version": 3,
   "palette": {
-    "first.bg": "#3A86FF",
+    "first.bg": "#26002b",
     "first.fg": "#FFFFFF",
     "ng.bg": "#1976d2",
     "ng.fg": "#FFFFFF",
@@ -11,8 +11,8 @@
     "second.fg": "#f1184c",
     "docker.bg": "#0B59E7",
     "docker.fg": "#000000",
-    "kubectl.bg": "#ebcc34",
-    "kubectl.fg": "#000000",
+    "kubectl.bg": "#326CE5",
+    "kubectl.fg": "#FFFFFF",
     "mvn.bg": "#2E2A65",
     "mvn.fg": "#FFFFFF",
     "npm.bg": "#ffeb3b",
@@ -43,7 +43,7 @@
     "execution-time.fg": "#ffffff",
     "os.bg": "#242424",
     "os.fg": "#ffffff",
-    "folder.bg": "#61AFEF",
+    "folder.bg": "#5b0269",
     "folder.fg": "#ffffff",
     "shell.bg": "#0077c2",
     "shell.fg": "#ffffff"
@@ -57,7 +57,7 @@
           "type": "shell",
           "style": "diamond",
           "leading_diamond": "\ue0c5",
-          "trailing_diamond": " ",
+          "trailing_diamond": "",
           "foreground": "p:first.fg",
           "background": "p:first.bg",
           "properties": {
@@ -76,6 +76,7 @@
           "background": "p:first.bg",
           "foreground": "p:first.fg",
           "style": "diamond",
+          "trailing_diamond": "\ue0cd",
           "template": "{{if .Root }}\ueb46{{ end }}{{ if .SSHSession }}\uEBA9 {{ end }}{{ .UserName }}{{ if .SSHSession }}@{{.HostName}} {{ end }}",
           "type": "session"
         },
@@ -83,7 +84,7 @@
           "type": "path",
           "style": "diamond",
           "leading_diamond": "\ue0cc",
-          "trailing_diamond": " ",
+          "trailing_diamond": "\uE0A0",
           "foreground": "p:folder.fg",
           "background": "p:folder.bg",
           "display_root": true,
@@ -98,7 +99,7 @@
           "type": "git",
           "style": "diamond",
           "leading_diamond": "\ue0a0",
-          "trailing_diamond": "\ue0c6",
+          "trailing_diamond": "\uE0B0",
           "foreground": "p:git.fg",
           "background": "p:git.bg",
           "background_templates": [
