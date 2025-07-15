@@ -65,8 +65,7 @@
               "powershell": "\ue86c",
               "ps": "\ue86c",
               "bash": "\ue760",
-              "zsh": "\ue761",
-              "_zsh": "\ue691",
+              "zsh": "\ue691",
               "fish": "\uee41"
             }
           }
@@ -82,7 +81,7 @@
         {
           "type": "path",
           "style": "powerline",
-          "powerline_symbol": "\ue0cc",
+          "leading_powerline_symbol": "\ue0cc",
           "foreground": "p:folder.fg",
           "background": "p:folder.bg",
           "display_root": true,
@@ -96,7 +95,7 @@
         {
           "type": "git",
           "style": "powerline",
-          "leading_powerline_symbol": "\ue0a0",
+          "leading_powerline_symbol": "",
           "foreground": "p:git.fg",
           "background": "p:git.bg",
           "background_templates": [
@@ -105,14 +104,17 @@
             "{{ if gt .Ahead 0 }}p:git-ahead.bg{{ end }}",
             "{{ if gt .Behind 0 }}p:git-behind.bg{{ end }}"
           ],
-          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}",
+          "template": " {{ .UpstreamIcon }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}",
           "properties": {
             "fetch_status": true,
             "fetch_upstream_icon": true,
             "source": "cli",
             "mapped_branches": {
               "feat/*": "🚀 ",
-              "bug/*": "🐛 "
+              "bug/*": "🐛 ",
+              "master": "\uDB80\uDDD7",
+              "main": "\ue5fd",
+              "develop": "\uf339"
             }
           }
         },
@@ -267,7 +269,8 @@
         },
         {
           "type": "os",
-          "style": "plain",
+          "style": "powerline",
+          "powerline_symbol": "",
           "foreground": "p:os.fg",
           "background": "p:os.bg",
           "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}}",
