@@ -74,14 +74,14 @@
           "background": "p:first.bg",
           "foreground": "p:first.fg",
           "style": "powerline",
-          "powerline_symbol": "\uE0CD",
+          "powerline_symbol": "\uE0CC",
           "template": "{{if .Root }}\ueb46{{ end }}{{ if .SSHSession }}\uEBA9 {{ end }}{{ .UserName }}{{ if .SSHSession }}@{{.HostName}}{{ end }} ",
           "type": "session"
         },
         {
           "type": "path",
           "style": "powerline",
-          "powerline_symbol": "\uE0CD",
+          "leading_powerline_symbol": "\uE0CD",
           "foreground": "p:folder.fg",
           "background": "p:folder.bg",
           "display_root": true,
