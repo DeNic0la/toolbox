@@ -74,14 +74,14 @@
           "background": "p:first.bg",
           "foreground": "p:first.fg",
           "style": "powerline",
-          "powerline_symbol": "\ue0cd",
+          "powerline_symbol": "\uE0CD",
           "template": "{{if .Root }}\ueb46{{ end }}{{ if .SSHSession }}\uEBA9 {{ end }}{{ .UserName }}{{ if .SSHSession }}@{{.HostName}} {{ end }}",
           "type": "session"
         },
         {
           "type": "path",
           "style": "powerline",
-          "leading_powerline_symbol": "\ue0cc",
+          "powerline_symbol": "\uE0CC",
           "foreground": "p:folder.fg",
           "background": "p:folder.bg",
           "display_root": true,
@@ -95,7 +95,7 @@
         {
           "type": "git",
           "style": "powerline",
-          "leading_powerline_symbol": "",
+          "powerline_symbol": "",
           "foreground": "p:git.fg",
           "background": "p:git.bg",
           "background_templates": [
