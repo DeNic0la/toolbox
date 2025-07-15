@@ -112,8 +112,8 @@
             "mapped_branches": {
               "feat/*": "🚀 ",
               "bug/*": "🐛 ",
-              "master": "\uDB80\uDDD7",
-              "main": "\ue5fd",
+              "master": "\uDB80\uDDD7 ",
+              "main": "",
               "develop": "\uf339"
             }
           }
@@ -232,7 +232,7 @@
           "display_default": false,
           "foreground": "p:python.fg",
           "background": "p:python.bg",
-          "template": " \uE73C {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Major }}{{.Minor}}{{ end }} "
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Major }}{{.Minor}}{{ end }} "
         },
         {
           "type": "spotify",
@@ -270,10 +270,10 @@
         {
           "type": "os",
           "style": "powerline",
-          "powerline_symbol": "\uE0B1",
+          "powerline_symbol": "",
           "foreground": "p:os.fg",
           "background": "p:os.bg",
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
           "properties": {
             "macos": "mac"
           }
