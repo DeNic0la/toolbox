@@ -57,7 +57,6 @@
           "type": "shell",
           "style": "diamond",
           "leading_diamond": "\ue0c5",
-          "trailing_diamond": "",
           "foreground": "p:first.fg",
           "background": "p:first.bg",
           "properties": {
@@ -75,16 +74,15 @@
         {
           "background": "p:first.bg",
           "foreground": "p:first.fg",
-          "style": "diamond",
-          "trailing_diamond": "\ue0cd",
+          "style": "powerline",
+          "powerline_symbol": "\ue0cd",
           "template": "{{if .Root }}\ueb46{{ end }}{{ if .SSHSession }}\uEBA9 {{ end }}{{ .UserName }}{{ if .SSHSession }}@{{.HostName}} {{ end }}",
           "type": "session"
         },
         {
           "type": "path",
-          "style": "diamond",
-          "leading_diamond": "\ue0cc",
-          "trailing_diamond": "\uE0A0",
+          "style": "powerline",
+          "powerline_symbol": "\ue0cc",
           "foreground": "p:folder.fg",
           "background": "p:folder.bg",
           "display_root": true,
@@ -97,9 +95,8 @@
         },
         {
           "type": "git",
-          "style": "diamond",
-          "leading_diamond": "\ue0a0",
-          "trailing_diamond": "\uE0B0",
+          "style": "powerline",
+          "leading_powerline_symbol": "\ue0a0",
           "foreground": "p:git.fg",
           "background": "p:git.bg",
           "background_templates": [
