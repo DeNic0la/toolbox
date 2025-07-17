@@ -89,7 +89,19 @@
           "properties": {
             "style": "agnoster",
             "mapped_locations": {
-              "C:\\temp": ""
+              "C:\\temp": "",
+              "C:\\Users\\*": "F0826",
+              "**\\GitHub": "",
+              "**/IdeaProjects": "\ue808",
+              "**\\IdeaProjects": "\ue808",
+              "**\\repos": "\uea62",
+              "**/repos": "\uea62",
+              "**/Desktop": "\uDB82\uDCB9",
+              "**/Downloads": "\uF409",
+              "**/Documents": "\uDB80\uDE19",
+              "C:\\**\\Desktop": "\uDB80\uDDC5",
+              "C:\\**\\Downloads": "\uF019",
+              "C:\\**\\Documents": "\uDB80\uDE19"
             }
           }
         },
