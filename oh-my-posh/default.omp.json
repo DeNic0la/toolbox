@@ -66,7 +66,8 @@
               "ps": "\ue86c",
               "bash": "\ue760",
               "zsh": "\ue691",
-              "fish": "\uee41"
+              "fish": "\uee41",
+              "cmd": "\uebc4"
             }
           }
         },
@@ -75,7 +76,7 @@
           "foreground": "p:first.fg",
           "style": "powerline",
           "powerline_symbol": "\uE0CC",
-          "template": "{{if .Root }}\ueb46{{ end }}{{ if .SSHSession }}\uEBA9 {{ end }}{{ .UserName }}{{ if .SSHSession }}@{{.HostName}}{{ end }} ",
+          "template": " {{if .Root }}\ueb46{{ end }}{{ if .SSHSession }}\uEBA9 {{ end }}{{ .UserName }}{{ if .SSHSession }}@{{.HostName}}{{ end }} ",
           "type": "session"
         },
         {
