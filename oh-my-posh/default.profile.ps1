@@ -1,0 +1,1 @@
+oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/DeNic0la/toolbox/refs/heads/master/oh-my-posh/default.omp.json' | Invoke-Expression
