@@ -1,99 +1,4 @@
 # Toolbox
-<style>
-
-:root:not(var(--darkmode)) {
-  --indent-unit: 1.5em;
-  /* Light mode variables */
-  --details-bg: #f9f9f9;
-  --details-bg-open: #f0f0f0;
-  --details-border: #ccc;
-  --details-color: #1F2328;
-
-  --details-nested-bg: #fdfdfd;
-}
-
-:root:where(var(--darkmode)),
-@media (prefers-color-scheme: dark) :root {
-    --details-bg: #1e1e1e;
-    --details-bg-open: #2a2a2a;
-    --details-border: #444;
-    --details-color: #ddd;
-
-    --details-nested-bg: #252525;
-
-}
-
-.h1 {
-  margin: .67em 0;
-  font-weight: 600;
-  padding-bottom: .3em;
-  font-size: 2em;
-  #border-bottom: 1px solid #3d444db3;
-}
-.h2 {
-  font-weight: 600;
-  padding-bottom: .3em;
-  font-size: 1.5em;
-  /*border-bottom: 1px solid #3d444db3;*/
-}
-.h3 {
-  font-weight: 600;
-  font-size: 1.25em;
-}
-.h4 {
-  font-weight: 600;
-  font-size: 1em;
-}
-.indented-1 { margin-left: calc(1 * var(--indent-unit)); }
-.indented-2 { margin-left: calc(2 * var(--indent-unit)); }
-.indented-3 { margin-left: calc(3 * var(--indent-unit)); }
-.indented-4 { margin-left: calc(4 * var(--indent-unit)); }
-.indented-5 { margin-left: calc(5 * var(--indent-unit)); }
-.indented-6 { margin-left: calc(6 * var(--indent-unit)); }
-.indented-7 { margin-left: calc(7 * var(--indent-unit)); }
-.indented-8 { margin-left: calc(8 * var(--indent-unit)); }
-.indented-9 { margin-left: calc(9 * var(--indent-unit)); }
-.indented-10 { margin-left: calc(10 * var(--indent-unit)); }
-
-
-details {
-  border: 1px solid var(--details-border);
-  border-radius: 0.5em;
-  padding: 0.75em 1em;
-  margin: 1em 0;
-  background: var(--details-bg);
-  color: var(--details-color);
-  transition: background 0.3s ease;
-}
-
-details[open] {
-  background: var(--details-bg-open);
-}
-
-summary {
-  cursor: pointer;
-  position: relative;
-}
-
-summary::marker,
-summary::-webkit-details-marker {
-  transition: transform 0.2s ease;
-}
-details[open] > summary {
-    color: #9198be;
-}
-/*
-details > *:not(summary) {
-  margin-left: 1.5em;
-}*/
-
-
-details details {
-  margin-top: 0.75em;
-  border-color: var(--details-border);
-  background: var(--details-nested-bg);
-}
-</style>
 
 ## Quick Setups
 
@@ -211,3 +116,102 @@ Autoinstallation for linux and macOS: (untested, but should work)
 ```shell bash zsh
 curl -s https://raw.githubusercontent.com/DeNic0la/toolbox/refs/heads/master/oh-my-posh/auto-setup.sh | bash -s
 ```
+
+
+
+
+<style>
+
+:root:not(var(--darkmode)) {
+  --indent-unit: 1.5em;
+  /* Light mode variables */
+  --details-bg: #f9f9f9;
+  --details-bg-open: #f0f0f0;
+  --details-border: #ccc;
+  --details-color: #1F2328;
+
+  --details-nested-bg: #fdfdfd;
+}
+
+:root:where(var(--darkmode)),
+@media (prefers-color-scheme: dark) :root {
+    --details-bg: #1e1e1e;
+    --details-bg-open: #2a2a2a;
+    --details-border: #444;
+    --details-color: #ddd;
+
+    --details-nested-bg: #252525;
+
+}
+
+.h1 {
+  margin: .67em 0;
+  font-weight: 600;
+  padding-bottom: .3em;
+  font-size: 2em;
+  #border-bottom: 1px solid #3d444db3;
+}
+.h2 {
+  font-weight: 600;
+  padding-bottom: .3em;
+  font-size: 1.5em;
+  /*border-bottom: 1px solid #3d444db3;*/
+}
+.h3 {
+  font-weight: 600;
+  font-size: 1.25em;
+}
+.h4 {
+  font-weight: 600;
+  font-size: 1em;
+}
+.indented-1 { margin-left: calc(1 * var(--indent-unit)); }
+.indented-2 { margin-left: calc(2 * var(--indent-unit)); }
+.indented-3 { margin-left: calc(3 * var(--indent-unit)); }
+.indented-4 { margin-left: calc(4 * var(--indent-unit)); }
+.indented-5 { margin-left: calc(5 * var(--indent-unit)); }
+.indented-6 { margin-left: calc(6 * var(--indent-unit)); }
+.indented-7 { margin-left: calc(7 * var(--indent-unit)); }
+.indented-8 { margin-left: calc(8 * var(--indent-unit)); }
+.indented-9 { margin-left: calc(9 * var(--indent-unit)); }
+.indented-10 { margin-left: calc(10 * var(--indent-unit)); }
+
+
+details {
+  border: 1px solid var(--details-border);
+  border-radius: 0.5em;
+  padding: 0.75em 1em;
+  margin: 1em 0;
+  background: var(--details-bg);
+  color: var(--details-color);
+  transition: background 0.3s ease;
+}
+
+details[open] {
+  background: var(--details-bg-open);
+}
+
+summary {
+  cursor: pointer;
+  position: relative;
+}
+
+summary::marker,
+summary::-webkit-details-marker {
+  transition: transform 0.2s ease;
+}
+details[open] > summary {
+    color: #9198be;
+}
+/*
+details > *:not(summary) {
+  margin-left: 1.5em;
+}*/
+
+
+details details {
+  margin-top: 0.75em;
+  border-color: var(--details-border);
+  background: var(--details-nested-bg);
+}
+</style>
