@@ -4,25 +4,56 @@ set -e
 
 # Verbose logging
 log_prefix="\e[30m[\e[36mDeNic0la\e[30m/\e[35mtoolbox\e[30m/\e[33moh-my-posh \e[34msetup\e[30m]\e[0m"
-CONFIG_FILE=""
-CLONE_PATH=""
-OMP_INSTALL_DIR=""
+
 log() {
   printf "${log_prefix} %s\n" "$*"
 }
+# Optional non-interactive mode
+USE_TOOLBOX=""
+CLONE_PATH="${CLONE_PATH:-}"
+CONFIG_FILE="${CONFIG_FILE:-}"
+install_dir="${install_dir:-}"
+NONINTERACTIVE=""
 
-# Ask the user how to load the config
-echo "Do you want to clone the toolbox repo or use the files from GitHub as URLs?"
-echo "1) Clone toolbox repo"
-echo "2) Use default config URL (default)"
-echo "Enter choice [1/2]: "
-read -r user_choice
+while getopts "cuhi:p:" opt; do
+  case $opt in
+    c) USE_TOOLBOX=true ;;
+    u) USE_TOOLBOX=false ;;
+    i) install_dir=$OPTARG ;;
+    p) CLONE_PATH=$OPTARG ;;
+    *)
+      log "\033[31mInvalid option: -$OPTARG\033[0m"
+      log "\033[34mUse \033[33m-c\033[34m to clone toolbox repo or \033[33m-u\033[34m to use default config URL."
+      log "\033[34mUse \033[33m-p <path>\033[34m to specify clone path and \033[33m-i <path>\033[34m for installation directory."
+      log "\033[34mUse \033[33m-h\033[34m for help.\n" >&2
+      exit 1
+      ;;
+    h)
+      echo "Usage: $0 [-c|-u] [-p clone_path] [-i install_dir]"
+      echo "  -c             Clone toolbox repo for config"
+      echo "  -u             Use default config URL"
+      echo "  -p <path>      Path to clone toolbox repo into"
+      echo "  -i <path>      Installation directory for oh-my-posh"
+      echo "  -h             Show help"
+      exit 0
+      ;;
+  esac
+done
 
-case "$user_choice" in
-  1) USE_TOOLBOX=true ;;
-  2|"") USE_TOOLBOX=false ;;
-  *) log "\e[31m\e[1mInvalid choice. \e[0m\e[34mDefaulting to \e[30m'\e[33mUse default config URL\e[30m'\e[34m."; USE_TOOLBOX=false ;;
-esac
+
+if [ -z "$NONINTERACTIVE" ]; then
+  echo "Do you want to clone the toolbox repo or use the files from GitHub as URLs?"
+  echo "1) Clone toolbox repo"
+  echo "2) Use default config URL (default)"
+  printf "Enter choice [1/2]: "
+  read -r user_choice
+
+  case "$user_choice" in
+    1) USE_TOOLBOX=true ;;
+    2|"") USE_TOOLBOX=false ;;
+    *) log "\033[31mInvalid choice.\033[0m \033[34mDefaulting to \033[30m'\033[33mUse default config URL\033[30m'\033[34m."; USE_TOOLBOX=false ;;
+  esac
+fi
 
 ensure_omp_install_dir() {
   if command -v oh-my-posh >/dev/null 2>&1; then
@@ -76,7 +107,6 @@ get_clone_path() {
 prepare_get_config() {
   if [ "$USE_TOOLBOX" = true ]; then
     log "Searching for \033[35mtoolbox\033[0m repo with \033[33moh-my-posh\033[0m config..."
-
     found_path=$(find "$HOME" -type f -path "*/toolbox/oh-my-posh/default.omp.json" 2>/dev/null | head -n 1)
 
     if [ -n "$found_path" ]; then
@@ -84,14 +114,20 @@ prepare_get_config() {
       log "\033[32mFound config at:\033[0m $CONFIG_FILE"
       return 0
     else
-      log "\033[33mNo existing Config found"
-      attempt=0
-      max_tries=3
-      while ! get_clone_path; do
-        log "\033[31m\033[1mNo valid path for repo is set.\033[0m"
-        attempt=$((attempt + 1))
-        [ "$attempt" -ge "$max_tries" ] && CLONE_PATH="$HOME" && break
-      done
+      if [ -n "$NONINTERACTIVE" ]; then
+        CLONE_PATH="${CLONE_PATH:-$HOME}"
+      else
+        attempt=0
+        max_tries=3
+        while ! get_clone_path; do
+          attempt=$((attempt + 1))
+          if [ "$attempt" -ge "$max_tries" ]; then
+            CLONE_PATH="$HOME"
+            log "Defaulting to \$HOME: $CLONE_PATH"
+            break
+          fi
+        done
+      fi
     fi
   else
     CONFIG_FILE="https://raw.githubusercontent.com/DeNic0la/toolbox/refs/heads/master/oh-my-posh/default.omp.json"
